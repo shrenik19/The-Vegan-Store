@@ -6,13 +6,13 @@ var demo={
 var transporter = nodemailer.createTransport({
   service: 'gmail',
   auth: {
-    user: 'kavishshah84@gmail.com',
-    pass: '47466768'
+    user: 'theveganstore2019@gmail.com',
+    pass: 'vegan2019'
   }
 });
 
 var mailOptions = {
-  from: 'kavishshah84@gmail.com',
+  from: 'theveganstore2019@gmail.com',
   to: demo.to,
   subject:demo.subject,
   text: demo.message

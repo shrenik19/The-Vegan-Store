@@ -15,9 +15,9 @@ getallveg:function(cat_name,callback){
      return db.query('select * from product_tbl where fk_cat_id=? and p_id NOT IN (?)',[fk_cat_id,p_id],callback);
  },
  
-updateProductwithoutimg:function(item,callback){
+updateProductwithoutimg:function(p_id,item,callback){
 
- return db.query('update product_tbl set p_name=?,p_price=?,p_qty=?,p_mfg=?,buffer_stock=? where p_id=?',[item.p_name,item.p_price,item.p_qty,item.p_mfg,item.buffer_stock,item.p_id],callback)
+ return db.query('update product_tbl set p_name=?,p_price=?,p_qty=?,p_mfg=?,buffer_stock=? where p_id=?',[item.p_name,item.p_price,item.p_qty,item.p_mfg,item.buffer_stock,p_id],callback)
 },
  updateProduct:function(item,filename,callback){
         console.log(item,filename)

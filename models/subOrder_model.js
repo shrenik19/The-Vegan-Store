@@ -10,13 +10,13 @@ addordersum:function(item,callback)
     }
     return db.query('insert into suborder_tbl(fk_o_id,fk_p_id,qty,price) VALUES ?',[value],callback);
 },
-getallsuborderdetail:function(callback)
+getallsuborderdetail:function(fk_o_id,callback)
 {
-    return db.query('select * from suborder_tbl',callback)
+    return db.query('select * from suborder_tbl where fk_o_id=?',[fk_o_id],callback)
 },
-getallsuborderDetail:function(fk_o_id,callback)
+getallsuborderDetailwithID:function(fk_o_id,callback)
 {
-     return db.query('select o.*,so.* from order_tbl o,suborder_tbl so where so.fk_o_id=o.o_id and fk_o_id=?',[fk_o_id],callback);
+    return db.query('select o.*,so.* from order_tbl o,suborder_tbl so where so.fk_o_id=o.o_id and fk_o_id=?',[fk_o_id],callback);
 }
 }
 module.exports=suborder;

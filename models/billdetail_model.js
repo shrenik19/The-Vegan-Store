@@ -6,9 +6,10 @@ addbillsum:function(item,callback)
     var value=[];
     for(let i=0;i<item.length;i++)
     {
-        value[i]=[item[i].fk_bill_id,item[i].fk_dish_id,item[i].price,item[i].qty];
+        value[i]=[item[i].fk_bill_id,item[i].fk_p_id,item[i].price,item[i].qty];
     }
-    return db.query('insert into billdetail_tbl(fk_bill_id,fk_dish_id,price,qty) VALUES ?',[value],callback);
+    console.log(value);
+    return db.query('insert into billdetail_tbl(fk_bill_id,fk_p_id,price,qty) VALUES  ?',[value],callback);
 },
 getallbilldetail:function(callback)
 {

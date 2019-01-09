@@ -14,12 +14,12 @@ router.post('/', function (req, res, next) {
     });
    });
   router.get('/:fk_o_id?', function (req, res, next) {
-  suborder.getallsuborderDetail(req.params.fk_bill_id,function (err, rows) {
+  suborder.getallsuborderdetail(req.params.fk_o_id,function (err, rows) {
         if (err) {
               res.json(err);
         }
         else {
-            console.log(rows.insertid)
+          
                res.json(rows);
             }
          });
