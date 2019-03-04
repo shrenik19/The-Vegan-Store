@@ -38,7 +38,8 @@ router.get('/',function (req, res, next) {
 });
 
 router.put('/:o_id', function (req, res, next) {
-  category.updateorder(req.params.o_id, req.body, function (err, rows) {
+  order.updateorder(req.params.o_id, req.body, function (err, rows) {
+
 
    if (err) {
       res.json(err);
