@@ -6,6 +6,7 @@
     "start": "node ./bin/www"
   },
   "dependencies": {
+    "angular-payments": "^1.0.7",
     "cookie-parser": "~1.4.3",
     "cors": "^2.8.4",
     "debug": "~2.6.9",
@@ -16,6 +17,7 @@
     "multer": "^1.4.0",
     "mysql": "^2.16.0",
     "nodemailer": "^4.6.8",
+    "paypal-rest-sdk": "^1.8.1",
     "save": "^2.3.2"
   }
 }
