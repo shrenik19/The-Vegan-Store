@@ -42,6 +42,11 @@ getallproBycat:function(cat_name,callback){
         delarr[i]=item[i].p_id;
     }
     return db.query('delete from product_tbl where p_id in (?)',[delarr],callback)
-}
+},
+getAllproductByAscorder:function(callback){
+    return db.query('SELECT * FROM product_tbl ORDER BY p_name ASC',callback);
+},
+
+
 }
 module.exports=product;

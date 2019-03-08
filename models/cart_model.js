@@ -19,12 +19,13 @@ updatecart:function(item,callback){
     console.log(item);
     return db.query('update cart_tbl set c_price=?,qty=? where c_id=?',[item.c_price,item.qty,item.c_id],callback)
 },
-deleteAllcat:function(item,callback){
+deleteAllcart:function(item,callback){
+    console.log(item);
     var delarr=[];
     for(i=0;i<item.length;i++){
-        delarr[i]=item[i].c_id;
+        delarr[i]=item[i].fk_email_id;
     }
-    return db.query('delete from cart_tbl where c_id in (?)',[delarr],callback)
+    return db.query('delete from cart_tbl where fk_email_id in (?)',[delarr],callback)
 }
 }
 module.exports=cart;
