@@ -4,13 +4,18 @@ var order={
 
 addorder:function(item,callback){
     var sts="pending";
-    return db.query('insert into order_tbl values(?,?,?,?,?)',[item.o_id,item.o_price,item.o_date,item.fk_email_id,sts],callback)
+    var date1=new Date();
+    return db.query('insert into order_tbl values(?,?,?,?,?)',[item.o_id,item.o_price,date1,item.fk_email_id,sts],callback)
 },
 getOrder:function(fk_email_id,callback){
     return db.query('select * from order_tbl where fk_email_id=?',[fk_email_id],callback)
 },
 getOrderbyid:function(o_id,callback){
     return db.query('select * from order_tbl where o_id=?',[o_id],callback)
+},
+updateProduct:function(item,callback){
+    console.log(item);
+ return db.query('update product_tbl set p_qty=? where p_id=?',[item.p_qty,item.p_id],callback)
 },
 getallOrder:function(callback){
     return db.query('select * from order_tbl',callback)
