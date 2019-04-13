@@ -42,6 +42,8 @@ var pastorder=require('./routes/past_order_route');
 var pastorderdetail=require('./routes/past_order_detail_route');
 var deleteandgetAllpro=require('./routes/deleteandgetAllpro');
 var supplierpro=require('./routes/supplierProductName_route');
+var similar=require('./routes/productSimilar_route');
+var wishlist=require('./routes/wishlist_route');
 var app = express();
 
 // view engine setup
@@ -54,6 +56,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use('/product',product);
+app.use('/similar',similar);
 app.use('/updatecat',updatecat);
 app.use('/category',category);
 app.use('/cart',cart);
@@ -87,6 +90,7 @@ app.use('/supplierpro',supplierpro);
 app.use('/pastorder',pastorder);
 app.use('/searchprobycat',searchprobycat);
 app.use('/search',search);
+app.use('/wishlist',wishlist);
 app.use('/pastorderdetail',pastorderdetail);
 app.use('/deleteandgetAllpro',deleteandgetAllpro);
 app.use('/', indexRouter);
