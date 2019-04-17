@@ -44,6 +44,8 @@ var deleteandgetAllpro=require('./routes/deleteandgetAllpro');
 var supplierpro=require('./routes/supplierProductName_route');
 var similar=require('./routes/productSimilar_route');
 var wishlist=require('./routes/wishlist_route');
+var filtercat=require('./routes/filterbyCat');
+var filterrange=require('./routes/filterbyrange');
 var app = express();
 
 // view engine setup
@@ -91,6 +93,8 @@ app.use('/pastorder',pastorder);
 app.use('/searchprobycat',searchprobycat);
 app.use('/search',search);
 app.use('/wishlist',wishlist);
+app.use('/filtercat',filtercat);
+app.use('/filterrange',filterrange);
 app.use('/pastorderdetail',pastorderdetail);
 app.use('/deleteandgetAllpro',deleteandgetAllpro);
 app.use('/', indexRouter);

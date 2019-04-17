@@ -48,7 +48,14 @@ getAllproductByAscorder:function(callback){
 },
 getAllfilterpro:function(cat_id,range,callback){
     return db.query('select * from product_tbl where fk_cat_id=? and p_price<?',[cat_id,range],callback)
-}
+},
+getallfilterbycat:function(cat_id,callback)
+{
+    return db.query('select * from product_tbl where fk_cat_id=?',[cat_id],callback)
+},
+getAllfilterbyrange:function(range,callback){
+    return db.query('select * from product_tbl where p_price<?',[range],callback)
+},
 
 
 }
